@@ -69,18 +69,18 @@ products.forEach((product) =>{
           matchingItem = item;
         }
       });
-      const quantitySelector = document.querySelector('.js-quantity-selector-${product.id}');
+      const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
       const quantity = Number(quantitySelector.value);
 
 
         if(matchingItem){
-          matchingItem.quntity+=quntity;
+          matchingItem.quantity += quantity;
         
         }
         else {
           cart.push({
             productId: productId,
-            quntity: quantity;
+            quantity: quantity
           }); 
 
         }
@@ -88,7 +88,7 @@ products.forEach((product) =>{
         let cartQuantity = 0;
 
         cart.forEach((item) =>{
-          cartQuantity += item.quntity;
+          cartQuantity += item.quantity;
 
         });
 

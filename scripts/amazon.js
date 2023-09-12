@@ -61,7 +61,7 @@ products.forEach((product) =>{
   document.querySelectorAll('.js-add-to-cart')
   .forEach((button) =>{
     button.addEventListener('click', () =>{ 
-      const productId = button.dataset.productId;
+      const {productId} = button.dataset;
       let matchingItem;
 
       cart.forEach((item) => {
@@ -79,8 +79,8 @@ products.forEach((product) =>{
         }
         else {
           cart.push({
-            productId: productId,
-            quantity: quantity
+            productId,
+            quantity
           }); 
 
         }
